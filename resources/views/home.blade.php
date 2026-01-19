@@ -310,7 +310,14 @@
         <div class="row">
             <div class="col-md-5 fade-in">
                 <h5>{{ __('site.contact.get_in_touch') }}</h5>
-                <p class="text-muted">{{ __('site.contact.address') }}<br>{{ __('site.contact.phone') }}<br>{{ __('site.contact.email') }}</p>
+                <p class="text-muted">
+                    <strong>Adresse :</strong> avenue EL HADJ OMAR TALL<br>
+                    <span style="font-size:0.95em;">À côté Direction Générale Assurance AGM (Carrefour Bana Blanc)</span><br>
+                    <strong>Téléphone :</strong> +222 48 26 64 64<br>
+                    <strong>WhatsApp :</strong> +222 48 43 44 01<br>
+                    <strong>Commercial :</strong> +222 46 27 78 16<br>
+                    <strong>Email :</strong> commercial@atlassecurity-mr.com
+                </p>
                 <div class="mt-3">
                     <strong>{{ __('site.contact.office_hours') }}</strong>
                     <p class="text-muted mb-0">{{ __('site.contact.office_time') }}</p>
@@ -376,4 +383,67 @@
 }
 </style>
 
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/22248266464" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#25D366"/>
+        <path d="M23.5 17.7c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1c-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.3-.8-.7-1.3-1.5-1.5-1.8-.2-.3 0-.4.1-.6.1-.1.2-.2.3-.4.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.2.1-.3 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.8.8-.8 2 0 1.2.8 2.4 1.1 2.8.3.4 2.1 3.2 5.1 4.2 1.1.4 2 .7 2.7.7.8 0 1.3-.2 1.5-.5.2-.3.2-1.1.1-1.3-.1-.2-.3-.3-.6-.5z" fill="#fff"/>
+    </svg>
+</a>
+<style>
+.whatsapp-float {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 1050;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: whatsapp-fadein 0.7s cubic-bezier(.4,1.4,.6,1) 1;
+    cursor: pointer;
+ }
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+ }
+.whatsapp-float:hover, .whatsapp-float:focus {
+    box-shadow: 0 8px 24px rgba(37,211,102,0.25), 0 2px 8px rgba(0,0,0,0.13);
+    transform: scale(1.07);
+ }
+@keyframes whatsapp-fadein {
+    0% { opacity: 0; transform: scale(0.7); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 767.98px) {
+    .whatsapp-float {
+        left: 16px;
+        bottom: 16px;
+        width: 52px;
+        height: 52px;
+    }
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+@media (max-width: 575.98px) {
+    .whatsapp-float {
+        left: 12px;
+        bottom: 12px;
+        width: 48px;
+        height: 48px;
+    }
+    .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+</style>
 @endsection
