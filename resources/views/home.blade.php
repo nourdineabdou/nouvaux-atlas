@@ -385,19 +385,20 @@
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/22248266464" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="16" cy="16" r="16" fill="#25D366"/>
-        <path d="M23.5 17.7c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1c-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.3-.8-.7-1.3-1.5-1.5-1.8-.2-.3 0-.4.1-.6.1-.1.2-.2.3-.4.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.2.1-.3 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.8.8-.8 2 0 1.2.8 2.4 1.1 2.8.3.4 2.1 3.2 5.1 4.2 1.1.4 2 .7 2.7.7.8 0 1.3-.2 1.5-.5.2-.3.2-1.1.1-1.3-.1-.2-.3-.3-.6-.5z" fill="#fff"/>
+    <!-- Logo officiel WhatsApp SVG -->
+    <svg viewBox="0 0 448 448" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="224" cy="224" r="224" fill="#25D366"/>
+      <path d="M224 96c-70.7 0-128 57.3-128 128 0 22.6 6.1 44.7 17.7 64l-18.7 68.5c-2.2 8.1 5.3 15.6 13.4 13.4l68.5-18.7c19.3 11.6 41.4 17.7 64 17.7 70.7 0 128-57.3 128-128S294.7 96 224 96zm0 224c-20.1 0-39.8-5.3-56.8-15.3l-4-2.4-40.7 11.1 11.1-40.7-2.4-4C117.3 263.8 112 244.1 112 224c0-61.9 50.1-112 112-112s112 50.1 112 112-50.1 112-112 112zm61.6-82.2c-3.4-1.7-20.1-9.9-23.2-11-3.1-1.1-5.4-1.7-7.7 1.7-2.3 3.4-8.8 11-10.8 13.3-2 2.3-4 2.6-7.4.9-20.1-10-33.3-17.8-46.6-40.2-3.5-6 3.5-5.6 10-18.6.9-1.7.5-3.2-.2-4.9-.7-1.7-7.7-18.6-10.6-25.5-2.8-6.8-5.7-5.9-7.7-6-2-.1-4.3-.1-6.6-.1-2.3 0-6 1-9.1 4.3-3.1 3.4-12 11.7-12 28.6s12.3 33.2 14 35.5c1.7 2.3 24.1 36.8 58.5 50.2 8.2 3.2 14.6 5.1 19.6 6.5 8.2 2.1 15.7 1.8 21.6 1.1 6.6-.8 20.1-8.2 22.9-16.1 2.8-7.9 2.8-14.7 2-16.1-.8-1.4-3.1-2.3-6.5-4z" fill="#fff"/>
     </svg>
 </a>
 <style>
 .whatsapp-float {
     position: fixed;
-    left: 24px;
-    bottom: 24px;
+    right: 24px;
+    bottom: 120px;
     z-index: 1050;
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
     background: #25D366;
     border-radius: 50%;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
@@ -407,15 +408,17 @@
     transition: box-shadow 0.2s, transform 0.2s;
     animation: whatsapp-fadein 0.7s cubic-bezier(.4,1.4,.6,1) 1;
     cursor: pointer;
+    border: 2px solid #fff;
  }
 .whatsapp-float svg {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: block;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
  }
 .whatsapp-float:hover, .whatsapp-float:focus {
     box-shadow: 0 8px 24px rgba(37,211,102,0.25), 0 2px 8px rgba(0,0,0,0.13);
-    transform: scale(1.07);
+    transform: scale(1.09);
  }
 @keyframes whatsapp-fadein {
     0% { opacity: 0; transform: scale(0.7); }
@@ -423,20 +426,20 @@
 }
 @media (max-width: 767.98px) {
     .whatsapp-float {
-        left: 16px;
-        bottom: 16px;
-        width: 52px;
-        height: 52px;
+        right: 16px;
+        bottom: 90px;
+        width: 56px;
+        height: 56px;
     }
     .whatsapp-float svg {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
     }
 }
 @media (max-width: 575.98px) {
     .whatsapp-float {
-        left: 12px;
-        bottom: 12px;
+        right: 12px;
+        bottom: 70px;
         width: 48px;
         height: 48px;
     }
