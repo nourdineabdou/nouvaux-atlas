@@ -15,11 +15,62 @@
 <section id="blog" class="py-5">
     <div class="container">
         <h2 class="text-center mb-4">{{ __('site.blog.title') }}</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
+        <div class="row justify-content-center align-items-center mb-4">
+            <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
+                <div class="atlas-logo-box mx-auto p-2 animate-logo-box">
+                    <img src="{{ asset('atlas_sombre.jpeg') }}" alt="Logo Atlas Security" class="img-fluid atlas-logo-img animate-logo-img">
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
                 <p class="text-muted">{{ __('site.blog.text') }}</p>
             </div>
         </div>
+<style>
+.atlas-logo-box {
+    background: linear-gradient(135deg, #111a24 80%, #1e2a3a 100%);
+    border: 2px solid #1e2a3a;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transition: box-shadow .2s;
+}
+.atlas-logo-box:hover {
+    box-shadow: 0 8px 32px rgba(30,42,58,0.25), 0 2px 8px rgba(0,0,0,0.13);
+}
+.atlas-logo-img {
+    background: #111a24;
+    border-radius: 1.2rem;
+    padding: 0.5rem;
+    border: 1.5px solid #2a3d5c;
+}
+/* Animation for logo box and image */
+.animate-logo-box {
+    animation: logoBoxFadeIn 1.2s cubic-bezier(.4,1.4,.6,1) 1;
+}
+.animate-logo-img {
+    max-height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 12px #0a0a0a);
+    animation: logoImgPop 1.4s cubic-bezier(.4,1.4,.6,1) 1;
+    transition: transform 0.4s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s;
+}
+.animate-logo-img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 8px 32px rgba(30,42,58,0.25), 0 2px 8px rgba(0,0,0,0.13);
+    filter: drop-shadow(0 4px 18px #0a0a0a);
+}
+@keyframes logoBoxFadeIn {
+    0% { opacity: 0; transform: scale(0.7) translateY(40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes logoImgPop {
+    0% { opacity: 0; transform: scale(0.7) rotate(-8deg); }
+    60% { opacity: 1; transform: scale(1.08) rotate(2deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+@media (max-width: 767.98px) {
+    .atlas-logo-box { max-width: 220px; }
+    .atlas-logo-img, .animate-logo-img { max-height: 80px; }
+}
+</style>
 
         <div class="row g-3 mt-4">
             <div class="col-lg-10 mx-auto">
