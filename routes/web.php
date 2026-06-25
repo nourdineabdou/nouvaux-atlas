@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\File;
 
+Route::get('/maintenance', function () {
+    return view('maintenance');
+})->name('maintenance');
+
 Route::get('/', function () {
     $sections = ['blog','security','cleaning','companies','business'];
     $imagesBySection = [];

@@ -46,6 +46,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Maintenance Page Toggle
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable the custom maintenance page by setting the
+    | MAINTENANCE_PAGE_ENABLED variable in your .env file.
+    |
+    */
+
+    'maintenance_page_enabled' => (bool) env('MAINTENANCE_PAGE_ENABLED', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
     |
