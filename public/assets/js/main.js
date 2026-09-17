@@ -19,8 +19,8 @@ $(function(){
             var top = $(this).offset().top;
             var id = $(this).attr('id');
             if(scrollPos >= top){
-                $('.nav-link').removeClass('active');
-                $('.nav-link[href="#'+id+'"]').addClass('active');
+                $('.nav-link, .bn-item').removeClass('active');
+                $('.nav-link[href="#'+id+'"], .bn-item[href="#'+id+'"]').addClass('active');
             }
         });
     }).trigger('scroll');

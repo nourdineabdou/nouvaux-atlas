@@ -125,6 +125,17 @@
     </div>
 </footer>
 
+<!-- App-style bottom navigation (mobile & tablet) -->
+<nav class="app-bottom-nav" aria-label="Mobile navigation">
+    <a href="#hero" class="bn-item"><i class="bi bi-house-door"></i><span>{{ __('site.nav.home') }}</span></a>
+    <a href="#security" class="bn-item"><i class="bi bi-shield-lock"></i><span>{{ __('site.nav.security') }}</span></a>
+    <a href="https://wa.me/22248266464" target="_blank" rel="noopener" class="bn-fab" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="#business" class="bn-item"><i class="bi bi-graph-up-arrow"></i><span>{{ __('site.nav.business') }}</span></a>
+    <a href="#contact" class="bn-item"><i class="bi bi-envelope"></i><span>{{ __('site.nav.contact') }}</span></a>
+</nav>
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,6 +1,7 @@
 <?php
 return [
     'nav' => [
+        'home' => 'Accueil',
         'security' => 'Sécurité',
         'cleaning' => 'Nettoyage',
         'business' => 'Entreprise',
