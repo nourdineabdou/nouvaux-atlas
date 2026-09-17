@@ -10,7 +10,8 @@ return [
     ],
     'hero' => [
         'title' => 'ATLAS SECURITY A2S',
-        'lead' => 'Professional security and cleaning solutions tailored for businesses, events, and institutions. Trained agents — advanced procedures — trusted protection.'
+        'lead' => 'Professional security and cleaning solutions tailored for businesses, events, and institutions. Trained agents — advanced procedures — trusted protection.',
+        'floating' => 'Licensed & Trained Agents'
     ],
     'buttons' => [
         'contact' => 'Contact Us',
@@ -56,7 +57,9 @@ return [
         'phone' => 'Phone: +1 555 123 4567',
         'email' => 'Email: info@atlas-security.example',
         'office_hours' => 'Office Hours',
-        'office_time' => 'Mon - Fri: 08:00 - 18:00'
+        'office_time' => 'Mon - Fri: 08:00 - 18:00',
+        'find_us' => 'Find Us',
+        'view_on_maps' => 'View on Google Maps'
     ],
     'form' => [
         'name' => 'Your Name',

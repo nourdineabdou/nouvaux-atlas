@@ -109,10 +109,11 @@
             <div class="footer-col footer-contact-col">
                 <h6 class="footer-heading">{{ __('site.contact.title') }}</h6>
                 <ul class="footer-contact-list">
-                    <li><i class="bi bi-geo-alt"></i><span>avenue EL HADJ OMAR TALL</span></li>
-                    <li><i class="bi bi-telephone"></i><span>+222 48 26 64 64</span></li>
-                    <li><i class="bi bi-whatsapp"></i><span>+222 48 43 44 01</span></li>
+                    <li><i class="bi bi-geo-alt"></i><span>Îlot K, Tevragh Zeina, Nouakchott, Mauritanie</span></li>
+                    <li><i class="bi bi-telephone"></i><span>+222 48 26 64 64 / +222 46 27 78 16</span></li>
+                    <li><i class="bi bi-whatsapp"></i><span>+222 48 26 64 64</span></li>
                     <li><i class="bi bi-envelope"></i><span>commercial@atlassecurity-mr.com</span></li>
+                    <li><i class="bi bi-globe2"></i><span><a href="https://www.atlas-sarl.com" target="_blank" rel="noopener" class="footer-inline-link">www.atlas-sarl.com</a></span></li>
                 </ul>
             </div>
         </div>

@@ -10,7 +10,8 @@ return [
     ],
     'hero' => [
         'title' => 'ATLAS SECURITY A2S',
-        'lead' => 'Solutions professionnelles de sécurité et de nettoyage adaptées aux entreprises, événements et institutions. Agents formés — procédures avancées — protection fiable.'
+        'lead' => 'Solutions professionnelles de sécurité et de nettoyage adaptées aux entreprises, événements et institutions. Agents formés — procédures avancées — protection fiable.',
+        'floating' => 'Agents licenciés & formés'
     ],
     'buttons' => [
         'contact' => 'Nous contacter',
@@ -56,7 +57,9 @@ return [
         'phone' => 'Téléphone : +1 555 123 4567',
         'email' => 'Email : info@atlas-security.example',
         'office_hours' => 'Heures d’ouverture',
-        'office_time' => 'Lun - Ven : 08:00 - 18:00'
+        'office_time' => 'Lun - Ven : 08:00 - 18:00',
+        'find_us' => 'Retrouvez-nous',
+        'view_on_maps' => 'Voir sur Google Maps'
     ],
     'form' => [
         'name' => 'Votre nom',

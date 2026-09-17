@@ -179,12 +179,33 @@ section{padding:3.25rem 0}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.75rem}
 .hero-cta .btn{flex:1 1 auto;justify-content:center;display:inline-flex;align-items:center;gap:.5rem}
 
-.hero-visual{position:relative;margin-top:2.5rem}
-.hero-visual img{border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);position:relative;z-index:1}
+.hero-visual{position:relative;margin-top:2.5rem;padding-bottom:1.5rem}
 .hero-visual::before{
-    content:"";position:absolute;inset:14px -14px -14px 14px;
+    content:"";position:absolute;inset:14px -14px 1.5rem 14px;
     background:linear-gradient(135deg,var(--primary),var(--accent));
     border-radius:var(--radius-lg);z-index:0;opacity:.18;
+}
+.hero-visual-frame{
+    position:relative;z-index:1;border-radius:var(--radius-lg);overflow:hidden;
+    box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:var(--bg-tint);
+}
+.hero-visual-frame img{width:100%;height:100%;object-fit:cover;display:block}
+
+.hero-floating-badge{
+    position:absolute;left:1.25rem;bottom:0;z-index:2;
+    display:inline-flex;align-items:center;gap:.65rem;
+    background:#fff;border-radius:var(--radius-pill);
+    padding:.7rem 1.15rem .7rem .6rem;box-shadow:var(--shadow-md);
+    font-size:.85rem;font-weight:700;color:var(--ink);
+    max-width:calc(100% - 2.5rem);
+}
+.hero-floating-icon{
+    width:34px;height:34px;flex-shrink:0;border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--primary-light));
+    color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+@media (max-width:420px){
+    .hero-floating-badge{font-size:.78rem;left:.9rem;padding:.6rem 1rem .6rem .5rem}
 }
 
 .hero-trust{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.75rem}
@@ -305,6 +326,9 @@ section{padding:3.25rem 0}
     width:36px;height:36px;flex-shrink:0;border-radius:.65rem;
     background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--accent);
 }
+.contact-inline-link{color:#dfe7f2;transition:color .2s ease}
+.contact-inline-link:hover{color:#fff;text-decoration:underline}
+
 .contact-hours{background:rgba(255,255,255,.08);border-radius:var(--radius-md);padding:1rem 1.1rem}
 .contact-hours strong{color:#fff;display:block;margin-bottom:.25rem;font-size:.85rem}
 .contact-hours p{margin:0;font-size:.88rem;color:#c3d0e0}
@@ -318,6 +342,28 @@ section{padding:3.25rem 0}
 .form-label{font-weight:600;font-size:.85rem;color:var(--ink-soft);margin-bottom:.4rem}
 
 @media (min-width:768px){ .contact-info-panel,.contact-form-panel{padding:2.75rem} }
+
+/* Map */
+.map-block{margin-top:1.75rem}
+.map-block-head{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;
+    margin-bottom:.9rem;
+}
+.map-block-head h6{margin:0;font-weight:700;display:flex;align-items:center;gap:.5rem;color:var(--ink)}
+.map-block-head h6 i{color:var(--accent)}
+.map-link{
+    display:inline-flex;align-items:center;gap:.4rem;
+    font-size:.85rem;font-weight:600;color:var(--primary);
+    padding:.4rem .9rem;border-radius:var(--radius-pill);border:1.5px solid var(--border-soft);
+    transition:border-color .2s ease,background .2s ease;
+}
+.map-link:hover{border-color:var(--primary);background:rgba(13,110,253,.06)}
+.map-frame{
+    position:relative;width:100%;padding-top:65%;
+    border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--border-soft);
+}
+.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:768px){ .map-frame{padding-top:38%} }
 
 /* ==========================================================================
    Footer
@@ -345,6 +391,8 @@ section{padding:3.25rem 0}
 .footer-contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.85rem}
 .footer-contact-list li{display:flex;align-items:flex-start;gap:.65rem;font-size:.9rem;color:#a7b6ca}
 .footer-contact-list i{color:var(--primary-light);margin-top:.2rem}
+.footer-inline-link{color:#a7b6ca;transition:color .2s ease}
+.footer-inline-link:hover{color:#fff;text-decoration:underline}
 
 .footer-bottom{display:flex;flex-direction:column;gap:.35rem;padding:1.5rem 0;font-size:.85rem;color:#8b9bb0;text-align:center}
 @media (min-width:768px){ .footer-bottom{flex-direction:row;justify-content:space-between;text-align:left} }

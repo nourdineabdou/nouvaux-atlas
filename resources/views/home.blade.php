@@ -9,6 +9,10 @@
     $cleanImages = $imagesBySection['cleaning'] ?? [];
     $companyImages = $imagesBySection['companies'] ?? [];
     $businessImages = $imagesBySection['business'] ?? [];
+    $mapAddress = 'Îlot K, Tevragh Zeina, Nouakchott, Mauritanie';
+    $mapQuery = urlencode($mapAddress);
+    $heroImage = collect($securityImages)->first(fn($img) => !str_ends_with(strtolower($img), '.png'))
+        ?? ($securityImages[0] ?? asset('assets/images/hero.svg'));
 @endphp
 
 <!-- Hero -->
@@ -33,7 +37,13 @@
             </div>
             <div class="col-lg-6">
                 <div class="hero-visual fade-in d-2">
-                    <img src="{{ asset('assets/images/hero.svg') }}" alt="ATLAS SECURITY A2S" class="img-fluid">
+                    <div class="hero-visual-frame">
+                        <img src="{{ $heroImage }}" alt="ATLAS SECURITY A2S">
+                    </div>
+                    <div class="hero-floating-badge">
+                        <span class="hero-floating-icon"><i class="bi bi-patch-check-fill"></i></span>
+                        <span>{{ __('site.hero.floating') }}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -368,11 +378,11 @@
             <div class="contact-info-panel">
                 <h5>{{ __('site.contact.get_in_touch') }}</h5>
                 <ul class="contact-info-list">
-                    <li><i class="bi bi-geo-alt"></i><span>avenue EL HADJ OMAR TALL<br><small>À côté Direction Générale Assurance AGM (Carrefour Bana Blanc)</small></span></li>
-                    <li><i class="bi bi-telephone"></i><span>+222 48 26 64 64</span></li>
-                    <li><i class="bi bi-whatsapp"></i><span>+222 48 43 44 01</span></li>
-                    <li><i class="bi bi-briefcase"></i><span>{{ __('site.form.subject') }} : +222 46 27 78 16</span></li>
+                    <li><i class="bi bi-geo-alt"></i><span>Îlot K, Tevragh Zeina<br><small>Nouakchott, Mauritanie</small></span></li>
+                    <li><i class="bi bi-telephone"></i><span>+222 48 26 64 64<br><small>+222 46 27 78 16</small></span></li>
+                    <li><i class="bi bi-whatsapp"></i><span>+222 48 26 64 64</span></li>
                     <li><i class="bi bi-envelope"></i><span>commercial@atlassecurity-mr.com</span></li>
+                    <li><i class="bi bi-globe2"></i><span><a href="https://www.atlas-sarl.com" target="_blank" rel="noopener" class="contact-inline-link">www.atlas-sarl.com</a></span></li>
                 </ul>
                 <div class="contact-hours">
                     <strong>{{ __('site.contact.office_hours') }}</strong>
@@ -404,6 +414,24 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+
+        <div class="map-block fade-in">
+            <div class="map-block-head">
+                <h6><i class="bi bi-geo-alt-fill"></i> {{ __('site.contact.find_us') }}</h6>
+                <a href="https://www.google.com/maps/search/?api=1&query={{ $mapQuery }}" target="_blank" rel="noopener" class="map-link">
+                    {{ __('site.contact.view_on_maps') }} <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+            </div>
+            <div class="map-frame">
+                <iframe
+                    src="https://www.google.com/maps?q={{ $mapQuery }}&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                    title="ATLAS SECURITY A2S — {{ $mapAddress }}">
+                </iframe>
             </div>
         </div>
     </div>
