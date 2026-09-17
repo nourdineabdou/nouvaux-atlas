@@ -21,7 +21,8 @@ class ImageController extends Controller
     {
         $sections = ['blog','security','cleaning','companies','business'];
         $images = Image::orderBy('created_at','desc')->get()->groupBy('section');
-        return view('admin.upload', compact('sections','images'));
+        $limits = $this->limits;
+        return view('admin.upload', compact('sections','images','limits'));
     }
 
     public function upload(Request $request)

@@ -1,16 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="ATLAS SECURITY A2S - Professional security & cleaning services">
+    <meta name="theme-color" content="#0a1f33">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>ATLAS SECURITY A2S</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Font Awesome (optional) -->
@@ -21,64 +25,101 @@
 
     @stack('head')
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="90">
+<body>
 
 <!-- Navbar -->
-<nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{{ asset('atlas_logo.png') }}" alt="ATLAS" height="40" class="me-2">
-            <span class="fw-bold">ATLAS SECURITY A2S</span>
+        <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ asset('atlas_logo.png') }}" alt="ATLAS" class="navbar-brand-logo">
+            <span class="navbar-brand-text">ATLAS SECURITY <em>A2S</em></span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar"></span>
+            <span class="navbar-toggler-bar"></span>
+            <span class="navbar-toggler-bar"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-lg-center">
-                <li class="nav-item"><a class="nav-link" href="#blog">{{ __('site.nav.blog') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="#security">{{ __('site.nav.security') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="#cleaning">{{ __('site.nav.cleaning') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="#business">{{ __('site.nav.business') }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="#blog">{{ __('site.nav.blog') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="#companies">{{ __('site.nav.companies') }}</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-2" href="#contact">{{ __('site.nav.contact') }}</a></li>
             </ul>
 
-            <ul class="navbar-nav ms-3">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">{{ strtoupper(app()->getLocale()) }}</a>
+            <div class="navbar-cta-group">
+                <a class="btn btn-nav-cta" href="#contact">
+                    <i class="bi bi-chat-dots"></i> {{ __('site.nav.contact') }}
+                </a>
+
+                <div class="dropdown navbar-lang-dropdown">
+                    <button class="btn btn-lang" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-globe2"></i> {{ strtoupper(app()->getLocale()) }}
+                    </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-                        <li><a class="dropdown-item" href="{{ url('lang/en') }}">English</a></li>
-                        <li><a class="dropdown-item" href="{{ url('lang/fr') }}">Français</a></li>
+                        <li><a class="dropdown-item {{ app()->getLocale()=='en' ? 'active' : '' }}" href="{{ url('lang/en') }}">🇬🇧 English</a></li>
+                        <li><a class="dropdown-item {{ app()->getLocale()=='fr' ? 'active' : '' }}" href="{{ url('lang/fr') }}">🇫🇷 Français</a></li>
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('admin/images') }}"><i class="bi bi-folder-plus"></i> Admin</a>
-                </li>
-            </ul>
+                </div>
+
+                <a class="btn btn-admin-link" href="{{ url('admin/images') }}" aria-label="Admin" title="Admin">
+                    <i class="bi bi-shield-lock"></i>
+                </a>
+            </div>
         </div>
     </div>
 </nav>
 
-<main class="mt-5 pt-5">
+<main>
     @yield('content')
 </main>
 
 <!-- Back to top -->
-<button id="backToTop" class="btn btn-primary shadow rounded-circle" title="Back to top"><i class="bi bi-chevron-up"></i></button>
+<button id="backToTop" class="back-to-top" title="Back to top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
 <!-- Footer -->
-<footer class="bg-dark text-white mt-5">
-    <div class="container py-4">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <p class="mb-0">{{ __('site.footer.copy') }}</p>
-                <small>{{ __('site.footer.designed_by') }}</small>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand-col">
+                <a href="{{ url('/') }}" class="footer-brand">
+                    <img src="{{ asset('atlas_logo.png') }}" alt="ATLAS">
+                    <span>ATLAS SECURITY <em>A2S</em></span>
+                </a>
+                <p class="footer-tagline">{{ __('site.hero.lead') }}</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/22248266464" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="col-md-6 text-md-end">
-                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+
+            <div class="footer-col">
+                <h6 class="footer-heading">{{ __('site.nav.contact') }}</h6>
+                <ul class="footer-links">
+                    <li><a href="#security">{{ __('site.nav.security') }}</a></li>
+                    <li><a href="#cleaning">{{ __('site.nav.cleaning') }}</a></li>
+                    <li><a href="#business">{{ __('site.nav.business') }}</a></li>
+                    <li><a href="#blog">{{ __('site.nav.blog') }}</a></li>
+                    <li><a href="#companies">{{ __('site.nav.companies') }}</a></li>
+                </ul>
             </div>
+
+            <div class="footer-col footer-contact-col">
+                <h6 class="footer-heading">{{ __('site.contact.title') }}</h6>
+                <ul class="footer-contact-list">
+                    <li><i class="bi bi-geo-alt"></i><span>avenue EL HADJ OMAR TALL</span></li>
+                    <li><i class="bi bi-telephone"></i><span>+222 48 26 64 64</span></li>
+                    <li><i class="bi bi-whatsapp"></i><span>+222 48 43 44 01</span></li>
+                    <li><i class="bi bi-envelope"></i><span>commercial@atlassecurity-mr.com</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="mb-0">{{ __('site.footer.copy') }}</p>
+            <small>{{ __('site.footer.designed_by') }}</small>
         </div>
     </div>
 </footer>

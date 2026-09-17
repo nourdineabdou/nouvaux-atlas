@@ -101,9 +101,17 @@ $(function(){
     // Back to top
     var $back = $('#backToTop');
     $(window).on('scroll', function(){
-        if($(window).scrollTop() > 300) $back.fadeIn(); else $back.fadeOut();
+        $back.toggleClass('show', $(window).scrollTop() > 300);
     });
     $back.on('click', function(){ $('html,body').animate({scrollTop:0},600); });
+
+    // Auto-close mobile nav after tapping a link
+    var $navCollapse = $('#navbarNav');
+    $navCollapse.on('click', 'a.nav-link, a.btn-nav-cta', function(){
+        if($navCollapse.hasClass('show')){
+            bootstrap.Collapse.getOrCreateInstance($navCollapse[0]).hide();
+        }
+    });
 
     // Simple form validation bootstrap
     (function(){
@@ -119,106 +127,3 @@ $(function(){
         })
     })();
 });
-    // Admin AJAX handlers: load edit form, submit edit, delete image
-    $(function(){
-        // Set CSRF header for all AJAX
-        $.ajaxSetup({
-            headers: { 'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr('content') }
-        });
-
-        // Open edit modal and load form
-        $(document).on('click', '.img-edit-btn', function(e){
-            e.preventDefault();
-            var id = $(this).data('id');
-            $('#adminModalBody').html('<div class="text-center p-4">Loading…</div>');
-
-            // show only the section row that contains this image to focus the admin view
-            try{
-                var section = $('#img-card-' + id).data('section');
-                if(section){
-                    // hide all section rows and their preceding headers, then show only target
-                    $('div[id^="section-"]').hide();
-                    $('div[id^="section-"]').each(function(){ $(this).prev('h5').hide(); });
-                    var $targetRow = $('#section-' + section + '-row');
-                    $targetRow.show();
-                    $targetRow.prev('h5').show();
-                }
-            }catch(ex){ /* ignore if DOM not structured as expected */ }
-
-            $('#adminModal').modal('show');
-            $.get('/admin/images/'+id+'/edit', function(html){
-                $('#adminModalBody').html(html);
-            }).fail(function(){
-                $('#adminModalBody').html('<div class="alert alert-danger">Failed to load form.</div>');
-            });
-        });
-
-        // restore section rows when modal closes
-        $('#adminModal').on('hidden.bs.modal', function(){
-            $('div[id^="section-"]').show();
-            $('div[id^="section-"]').each(function(){ $(this).prev('h5').show(); });
-            $('#adminModalBody').html('');
-        });
-
-        // Submit edit form via AJAX (delegated because form is loaded dynamically)
-        $(document).on('submit', '#image-edit-form', function(e){
-            e.preventDefault();
-            var $form = $(this);
-            var action = $form.attr('action');
-            var method = $form.find('input[name=_method]').val() || 'POST';
-            var formData = new FormData(this);
-            $.ajax({
-                url: action,
-                type: method,
-                data: formData,
-                processData: false,
-                contentType: false,
-                        success: function(res){
-                            if(res && res.success){
-                                var id = res.id;
-                                var newSection = res.section;
-                                var cardHtml = res.card_html;
-                                var $old = $('#img-card-' + id);
-                                if($old.length){
-                                    $old.replaceWith(cardHtml);
-                                } else {
-                                    var $row = $('#section-' + newSection + '-row');
-                                    if($row.length){
-                                        $row.prepend(cardHtml);
-                                    } else {
-                                        location.reload();
-                                    }
-                                }
-                                $('#adminModal').modal('hide');
-                            } else {
-                                var msg = (res && res.message) ? res.message : 'Update failed.';
-                                alert(msg);
-                            }
-                        },
-                error: function(xhr){
-                    var msg = 'Update failed.';
-                    if(xhr.responseJSON && xhr.responseJSON.message) msg = xhr.responseJSON.message;
-                    alert(msg);
-                }
-            });
-        });
-
-        // Delete image via AJAX
-        $(document).on('click', '.img-delete-btn', function(e){
-            e.preventDefault();
-            if(!confirm('Delete this image?')) return;
-            var id = $(this).data('id');
-            $.ajax({
-                url: '/admin/images/'+id,
-                type: 'POST',
-                data: { _method: 'DELETE' },
-                success: function(){
-                    // remove card
-                    $('#img-card-'+id).fadeOut(300, function(){ $(this).remove(); });
-                },
-                error: function(){
-                    alert('Failed to delete image.');
-                }
-            });
-        });
-    });

@@ -4,8 +4,8 @@
         <div class="card-body p-2 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
             <small class="text-muted text-truncate w-100" style="max-width:120px;" title="{{ $img->original_name }}">{{ $img->original_name }}</small>
             <div class="btn-group w-100 w-md-auto" role="group">
-                <button class="btn btn-sm btn-secondary img-edit-btn w-100 mb-1 mb-md-0 me-md-1" data-id="{{ $img->id }}">Edit</button>
-                <button class="btn btn-sm btn-danger img-delete-btn w-100" data-id="{{ $img->id }}">Delete</button>
+                <button class="btn btn-sm btn-secondary img-edit-btn w-100 mb-1 mb-md-0 me-md-1" data-id="{{ $img->id }}">{{ __('admin.edit.edit_btn') }}</button>
+                <button class="btn btn-sm btn-danger img-delete-btn w-100" data-id="{{ $img->id }}">{{ __('admin.edit.delete_btn') }}</button>
             </div>
         </div>
     </div>
