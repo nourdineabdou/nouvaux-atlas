@@ -113,6 +113,39 @@ $(function(){
         }
     });
 
+    // Share office location (native share sheet, falls back to copy-link)
+    function showShareToast(text){
+        var $toast = $('#shareToast');
+        if(!$toast.length){
+            $toast = $('<div id="shareToast" class="share-toast"></div>').appendTo('body');
+        }
+        $toast.text(text).addClass('show');
+        clearTimeout($toast.data('hideTimer'));
+        var timer = setTimeout(function(){ $toast.removeClass('show'); }, 2600);
+        $toast.data('hideTimer', timer);
+    }
+
+    $('#shareLocationBtn').on('click', function(){
+        var $btn = $(this);
+        var url = $btn.data('url');
+        var title = $btn.data('title');
+        var copiedText = $btn.data('copiedText');
+
+        if(navigator.share){
+            navigator.share({ title: title, text: title, url: url }).catch(function(){ /* user cancelled */ });
+            return;
+        }
+        if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(url).then(function(){
+                showShareToast(copiedText);
+            }).catch(function(){
+                window.open(url, '_blank');
+            });
+        } else {
+            window.open(url, '_blank');
+        }
+    });
+
     // Simple form validation bootstrap
     (function(){
         'use strict'

@@ -11,6 +11,7 @@ return [
     ],
     'hero' => [
         'title' => 'ATLAS SECURITY A2S',
+        'badge' => 'Trusted. Professional. Secure.',
         'lead' => 'Professional security and cleaning solutions tailored for businesses, events, and institutions. Trained agents — advanced procedures — trusted protection.',
         'floating' => 'Licensed & Trained Agents'
     ],
@@ -40,16 +41,28 @@ return [
         ],
     ],
     'security' => [
-        'title' => 'SECURITY – Security Area and Provision of Security Agents'
+        'title' => 'SECURITY – Security Area and Provision of Security Agents',
+        'features' => [
+            1 => ['title' => 'Manned Guarding', 'text' => 'Trained guards for static and mobile patrols.'],
+            2 => ['title' => 'CCTV Monitoring', 'text' => '24/7 monitoring and incident response.'],
+            3 => ['title' => 'Event Security', 'text' => 'Professional staff for public and private events.'],
+            4 => ['title' => 'Executive Protection', 'text' => 'Discreet and reliable executive protection services.'],
+        ],
     ],
     'cleaning' => [
         'title' => 'Cleaning Services',
         'commercial' => 'Commercial Cleaning',
-        'commercial_desc' => 'Daily and periodic cleaning for offices and facilities.'
+        'commercial_desc' => 'Daily and periodic cleaning for offices and facilities.',
+        'deep_title' => 'Deep Cleaning',
+        'deep_text' => 'Sanitization and deep-clean services.',
+        'special_title' => 'Specialized Services',
+        'special_text' => 'Carpet, window, and high-level cleaning.'
     ],
     'business' => [
         'title' => 'Business Solutions',
-        'text' => 'Business continuity, risk management, and consultancy to help clients reduce exposure and operate securely.'
+        'text' => 'Business continuity, risk management, and consultancy to help clients reduce exposure and operate securely.',
+        'rapid' => 'Rapid Response',
+        'client_focused' => 'Client-focused'
     ],
     'contact' => [
         'title' => 'Contact',
@@ -60,7 +73,9 @@ return [
         'office_hours' => 'Office Hours',
         'office_time' => 'Mon - Fri: 08:00 - 18:00',
         'find_us' => 'Find Us',
-        'view_on_maps' => 'View on Google Maps'
+        'view_on_maps' => 'View on Google Maps',
+        'share_location' => 'Share Location',
+        'link_copied' => 'Location link copied!'
     ],
     'form' => [
         'name' => 'Your Name',
@@ -75,5 +90,18 @@ return [
     'footer' => [
         'copy' => '© Copyright ATLAS SECURITY A2S. All Rights Reserved',
         'designed_by' => 'Designed by Nourdine'
+    ],
+    'whatsapp' => [
+        'chat' => 'Chat with us'
+    ],
+    'a11y' => [
+        'toggle_nav' => 'Toggle navigation',
+        'back_to_top' => 'Back to top',
+        'mobile_nav' => 'Mobile navigation',
+        'facebook' => 'Facebook',
+        'linkedin' => 'LinkedIn',
+        'whatsapp' => 'WhatsApp',
+        'previous' => 'Previous',
+        'next' => 'Next'
     ]
 ];

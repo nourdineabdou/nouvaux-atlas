@@ -34,7 +34,7 @@
             <img src="{{ asset('atlas_logo.png') }}" alt="ATLAS" class="navbar-brand-logo">
             <span class="navbar-brand-text">ATLAS SECURITY <em>A2S</em></span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="{{ __('site.a11y.toggle_nav') }}">
             <span class="navbar-toggler-bar"></span>
             <span class="navbar-toggler-bar"></span>
             <span class="navbar-toggler-bar"></span>
@@ -76,7 +76,7 @@
 </main>
 
 <!-- Back to top -->
-<button id="backToTop" class="back-to-top" title="Back to top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<button id="backToTop" class="back-to-top" title="{{ __('site.a11y.back_to_top') }}" aria-label="{{ __('site.a11y.back_to_top') }}"><i class="bi bi-arrow-up"></i></button>
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -89,9 +89,9 @@
                 </a>
                 <p class="footer-tagline">{{ __('site.hero.lead') }}</p>
                 <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/22248266464" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="{{ __('site.a11y.facebook') }}"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="{{ __('site.a11y.linkedin') }}"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/22248266464" aria-label="{{ __('site.a11y.whatsapp') }}" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -126,10 +126,10 @@
 </footer>
 
 <!-- App-style bottom navigation (mobile & tablet) -->
-<nav class="app-bottom-nav" aria-label="Mobile navigation">
+<nav class="app-bottom-nav" aria-label="{{ __('site.a11y.mobile_nav') }}">
     <a href="#hero" class="bn-item"><i class="bi bi-house-door"></i><span>{{ __('site.nav.home') }}</span></a>
     <a href="#security" class="bn-item"><i class="bi bi-shield-lock"></i><span>{{ __('site.nav.security') }}</span></a>
-    <a href="https://wa.me/22248266464" target="_blank" rel="noopener" class="bn-fab" aria-label="WhatsApp">
+    <a href="https://wa.me/22248266464" target="_blank" rel="noopener" class="bn-fab" aria-label="{{ __('site.a11y.whatsapp') }}">
         <i class="bi bi-whatsapp"></i>
     </a>
     <a href="#business" class="bn-item"><i class="bi bi-graph-up-arrow"></i><span>{{ __('site.nav.business') }}</span></a>

@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row align-items-center g-4">
             <div class="col-lg-6">
-                <span class="hero-badge fade-in"><i class="bi bi-patch-check-fill"></i> Trusted. Professional. Secure.</span>
+                <span class="hero-badge fade-in"><i class="bi bi-patch-check-fill"></i> {{ __('site.hero.badge') }}</span>
                 <h1 class="fade-in d-1 mt-3">{{ __('site.hero.title') }}</h1>
                 <p class="lead fade-in d-2">{{ __('site.hero.lead') }}</p>
                 <div class="hero-cta fade-in d-3">
@@ -64,29 +64,29 @@
             <div class="col-6 col-lg-3">
                 <div class="feature-card fade-in h-100">
                     <div class="feature-icon"><i class="bi bi-shield-lock"></i></div>
-                    <h6>Manned Guarding</h6>
-                    <p>Trained guards for static and mobile patrols.</p>
+                    <h6>{{ __('site.security.features.1.title') }}</h6>
+                    <p>{{ __('site.security.features.1.text') }}</p>
                 </div>
             </div>
             <div class="col-6 col-lg-3">
                 <div class="feature-card fade-in d-1 h-100">
                     <div class="feature-icon"><i class="bi bi-camera-video"></i></div>
-                    <h6>CCTV Monitoring</h6>
-                    <p>24/7 monitoring and incident response.</p>
+                    <h6>{{ __('site.security.features.2.title') }}</h6>
+                    <p>{{ __('site.security.features.2.text') }}</p>
                 </div>
             </div>
             <div class="col-6 col-lg-3">
                 <div class="feature-card fade-in d-2 h-100">
                     <div class="feature-icon"><i class="bi bi-person-badge"></i></div>
-                    <h6>Event Security</h6>
-                    <p>Professional staff for public and private events.</p>
+                    <h6>{{ __('site.security.features.3.title') }}</h6>
+                    <p>{{ __('site.security.features.3.text') }}</p>
                 </div>
             </div>
             <div class="col-6 col-lg-3">
                 <div class="feature-card fade-in d-3 h-100">
                     <div class="feature-icon"><i class="bi bi-briefcase-fill"></i></div>
-                    <h6>Executive Protection</h6>
-                    <p>Discreet and reliable executive protection services.</p>
+                    <h6>{{ __('site.security.features.4.title') }}</h6>
+                    <p>{{ __('site.security.features.4.text') }}</p>
                 </div>
             </div>
         </div>
@@ -131,15 +131,15 @@
             <div class="col-md-4">
                 <div class="feature-card accent fade-in d-1 h-100">
                     <div class="feature-icon"><i class="bi bi-droplet-half"></i></div>
-                    <h5>Deep Cleaning</h5>
-                    <p>Sanitization and deep-clean services.</p>
+                    <h5>{{ __('site.cleaning.deep_title') }}</h5>
+                    <p>{{ __('site.cleaning.deep_text') }}</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card accent fade-in d-2 h-100">
                     <div class="feature-icon"><i class="bi bi-brush"></i></div>
-                    <h5>Specialized Services</h5>
-                    <p>Carpet, window, and high-level cleaning.</p>
+                    <h5>{{ __('site.cleaning.special_title') }}</h5>
+                    <p>{{ __('site.cleaning.special_text') }}</p>
                 </div>
             </div>
         </div>
@@ -179,13 +179,13 @@
                     <div class="col-6">
                         <div class="feature-card accent fade-in h-100">
                             <div class="feature-icon"><i class="bi bi-lightning-charge"></i></div>
-                            <h6 class="mb-0">Rapid Response</h6>
+                            <h6 class="mb-0">{{ __('site.business.rapid') }}</h6>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="feature-card accent fade-in d-1 h-100">
                             <div class="feature-icon"><i class="bi bi-people-fill"></i></div>
-                            <h6 class="mb-0">Client-focused</h6>
+                            <h6 class="mb-0">{{ __('site.business.client_focused') }}</h6>
                         </div>
                     </div>
                 </div>
@@ -256,11 +256,11 @@
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                            <span class="visually-hidden">{{ __('site.a11y.previous') }}</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span class="visually-hidden">{{ __('site.a11y.next') }}</span>
                         </button>
                     @else
                         {{-- fallback: static carousel preserved when no dynamic images are available --}}
@@ -274,39 +274,39 @@
                             <div class="carousel-item active">
                                 <img src="{{ asset('assets/images/blog1.webp') }}" class="d-block w-100 carousel-image" alt="Slide 1">
                                 <div class="carousel-caption d-block text-start">
-                                    <h5 class="text-white">Professional Protection</h5>
-                                    <p class="text-white-50">Trained personnel, modern procedures and 24/7 monitoring.</p>
+                                    <h5 class="text-white">{{ __('site.blog.slide_title.1') }}</h5>
+                                    <p class="text-white-50">{{ __('site.blog.slide_text.1') }}</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="{{ asset('assets/images/blog2.webp') }}" class="d-block w-100 carousel-image" alt="Slide 2">
                                 <div class="carousel-caption d-block text-start">
-                                    <h5 class="text-white">Event Security</h5>
-                                    <p class="text-white-50">Seamless protection for events of any scale.</p>
+                                    <h5 class="text-white">{{ __('site.blog.slide_title.2') }}</h5>
+                                    <p class="text-white-50">{{ __('site.blog.slide_text.2') }}</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="{{ asset('assets/images/blog3.webp') }}" class="d-block w-100 carousel-image" alt="Slide 3">
                                 <div class="carousel-caption d-block text-start">
-                                    <h5 class="text-white">CCTV & Monitoring</h5>
-                                    <p class="text-white-50">Advanced surveillance to keep your assets safe.</p>
+                                    <h5 class="text-white">{{ __('site.blog.slide_title.3') }}</h5>
+                                    <p class="text-white-50">{{ __('site.blog.slide_text.3') }}</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="{{ asset('assets/images/blog4.webp') }}" class="d-block w-100 carousel-image" alt="Slide 4">
                                 <div class="carousel-caption d-block text-start">
-                                    <h5 class="text-white">Cleaning & Maintenance</h5>
-                                    <p class="text-white-50">Premium cleaning services to keep environments pristine.</p>
+                                    <h5 class="text-white">{{ __('site.blog.slide_title.4') }}</h5>
+                                    <p class="text-white-50">{{ __('site.blog.slide_text.4') }}</p>
                                 </div>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                            <span class="visually-hidden">{{ __('site.a11y.previous') }}</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span class="visually-hidden">{{ __('site.a11y.next') }}</span>
                         </button>
                     @endif
                 </div>
@@ -423,9 +423,20 @@
         <div class="map-block fade-in">
             <div class="map-block-head">
                 <h6><i class="bi bi-geo-alt-fill"></i> {{ __('site.contact.find_us') }}</h6>
-                <a href="{{ $mapPlaceUrl }}" target="_blank" rel="noopener" class="map-link">
-                    {{ __('site.contact.view_on_maps') }} <i class="bi bi-box-arrow-up-right"></i>
-                </a>
+                <div class="map-block-actions">
+                    <button
+                        type="button"
+                        id="shareLocationBtn"
+                        class="map-link"
+                        data-url="{{ $mapPlaceUrl }}"
+                        data-title="ATLAS SECURITY A2S"
+                        data-copied-text="{{ __('site.contact.link_copied') }}">
+                        <i class="bi bi-share-fill"></i> {{ __('site.contact.share_location') }}
+                    </button>
+                    <a href="{{ $mapPlaceUrl }}" target="_blank" rel="noopener" class="map-link">
+                        {{ __('site.contact.view_on_maps') }} <i class="bi bi-box-arrow-up-right"></i>
+                    </a>
+                </div>
             </div>
             <div class="map-frame">
                 <iframe
@@ -442,7 +453,7 @@
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/22248266464" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <span class="whatsapp-label">{{ app()->getLocale() == 'fr' ? 'Discutez avec nous' : 'Chat with us' }}</span>
+    <span class="whatsapp-label">{{ __('site.whatsapp.chat') }}</span>
     <svg viewBox="0 0 448 448" xmlns="http://www.w3.org/2000/svg">
       <circle cx="224" cy="224" r="224" fill="#fff" opacity="0"/>
       <path d="M224 96c-70.7 0-128 57.3-128 128 0 22.6 6.1 44.7 17.7 64l-18.7 68.5c-2.2 8.1 5.3 15.6 13.4 13.4l68.5-18.7c19.3 11.6 41.4 17.7 64 17.7 70.7 0 128-57.3 128-128S294.7 96 224 96zm0 224c-20.1 0-39.8-5.3-56.8-15.3l-4-2.4-40.7 11.1 11.1-40.7-2.4-4C117.3 263.8 112 244.1 112 224c0-61.9 50.1-112 112-112s112 50.1 112 112-50.1 112-112 112zm61.6-82.2c-3.4-1.7-20.1-9.9-23.2-11-3.1-1.1-5.4-1.7-7.7 1.7-2.3 3.4-8.8 11-10.8 13.3-2 2.3-4 2.6-7.4.9-20.1-10-33.3-17.8-46.6-40.2-3.5-6 3.5-5.6 10-18.6.9-1.7.5-3.2-.2-4.9-.7-1.7-7.7-18.6-10.6-25.5-2.8-6.8-5.7-5.9-7.7-6-2-.1-4.3-.1-6.6-.1-2.3 0-6 1-9.1 4.3-3.1 3.4-12 11.7-12 28.6s12.3 33.2 14 35.5c1.7 2.3 24.1 36.8 58.5 50.2 8.2 3.2 14.6 5.1 19.6 6.5 8.2 2.1 15.7 1.8 21.6 1.1 6.6-.8 20.1-8.2 22.9-16.1 2.8-7.9 2.8-14.7 2-16.1-.8-1.4-3.1-2.3-6.5-4z" fill="#fff"/>

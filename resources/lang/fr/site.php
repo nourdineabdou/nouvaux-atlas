@@ -11,6 +11,7 @@ return [
     ],
     'hero' => [
         'title' => 'ATLAS SECURITY A2S',
+        'badge' => 'Fiable. Professionnel. Sécurisé.',
         'lead' => 'Solutions professionnelles de sécurité et de nettoyage adaptées aux entreprises, événements et institutions. Agents formés — procédures avancées — protection fiable.',
         'floating' => 'Agents licenciés & formés'
     ],
@@ -40,16 +41,28 @@ return [
         ],
     ],
     'security' => [
-        'title' => 'SÉCURITÉ — Zone de sécurité et fourniture d’agents de sécurité'
+        'title' => 'SÉCURITÉ — Zone de sécurité et fourniture d’agents de sécurité',
+        'features' => [
+            1 => ['title' => 'Gardiennage', 'text' => 'Agents formés pour des rondes statiques et mobiles.'],
+            2 => ['title' => 'Surveillance CCTV', 'text' => 'Surveillance 24/7 et intervention en cas d’incident.'],
+            3 => ['title' => 'Sécurité événementielle', 'text' => 'Personnel professionnel pour événements publics et privés.'],
+            4 => ['title' => 'Protection rapprochée', 'text' => 'Services de protection discrets et fiables pour dirigeants.'],
+        ],
     ],
     'cleaning' => [
         'title' => 'Services de nettoyage',
         'commercial' => 'Nettoyage commercial',
-        'commercial_desc' => 'Nettoyage quotidien et périodique pour bureaux et locaux professionnels.'
+        'commercial_desc' => 'Nettoyage quotidien et périodique pour bureaux et locaux professionnels.',
+        'deep_title' => 'Nettoyage en profondeur',
+        'deep_text' => 'Services de désinfection et de nettoyage en profondeur.',
+        'special_title' => 'Services spécialisés',
+        'special_text' => 'Nettoyage de tapis, vitres et en hauteur.'
     ],
     'business' => [
         'title' => 'Solutions d’affaires',
-        'text' => 'Continuité des activités, gestion des risques et conseil pour aider les clients à réduire leur exposition et opérer en toute sécurité.'
+        'text' => 'Continuité des activités, gestion des risques et conseil pour aider les clients à réduire leur exposition et opérer en toute sécurité.',
+        'rapid' => 'Réponse rapide',
+        'client_focused' => 'Orienté client'
     ],
     'contact' => [
         'title' => 'Contact',
@@ -60,7 +73,9 @@ return [
         'office_hours' => 'Heures d’ouverture',
         'office_time' => 'Lun - Ven : 08:00 - 18:00',
         'find_us' => 'Retrouvez-nous',
-        'view_on_maps' => 'Voir sur Google Maps'
+        'view_on_maps' => 'Voir sur Google Maps',
+        'share_location' => 'Partager la localisation',
+        'link_copied' => 'Lien de la localisation copié !'
     ],
     'form' => [
         'name' => 'Votre nom',
@@ -75,5 +90,18 @@ return [
     'footer' => [
         'copy' => '© Copyright ATLAS SECURITY A2S. Tous droits réservés',
         'designed_by' => 'Conçu par Nourdine'
+    ],
+    'whatsapp' => [
+        'chat' => 'Discutez avec nous'
+    ],
+    'a11y' => [
+        'toggle_nav' => 'Afficher/masquer le menu',
+        'back_to_top' => 'Retour en haut',
+        'mobile_nav' => 'Navigation mobile',
+        'facebook' => 'Facebook',
+        'linkedin' => 'LinkedIn',
+        'whatsapp' => 'WhatsApp',
+        'previous' => 'Précédent',
+        'next' => 'Suivant'
     ]
 ];
