@@ -10,7 +10,10 @@
     $companyImages = $imagesBySection['companies'] ?? [];
     $businessImages = $imagesBySection['business'] ?? [];
     $mapAddress = 'Îlot K, Tevragh Zeina, Nouakchott, Mauritanie';
-    $mapQuery = urlencode($mapAddress);
+    $mapLat = '18.0895023';
+    $mapLng = '-15.9919729';
+    $mapEmbedSrc = "https://www.google.com/maps?q={$mapLat},{$mapLng}&z=17&output=embed";
+    $mapPlaceUrl = "https://www.google.com/maps/place/18%C2%B005'22.2%22N+15%C2%B059'31.1%22W/@{$mapLat},{$mapLng},17z";
     $heroImage = collect($securityImages)->first(fn($img) => !str_ends_with(strtolower($img), '.png'))
         ?? ($securityImages[0] ?? asset('assets/images/hero.svg'));
 @endphp
@@ -420,13 +423,13 @@
         <div class="map-block fade-in">
             <div class="map-block-head">
                 <h6><i class="bi bi-geo-alt-fill"></i> {{ __('site.contact.find_us') }}</h6>
-                <a href="https://www.google.com/maps/search/?api=1&query={{ $mapQuery }}" target="_blank" rel="noopener" class="map-link">
+                <a href="{{ $mapPlaceUrl }}" target="_blank" rel="noopener" class="map-link">
                     {{ __('site.contact.view_on_maps') }} <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             </div>
             <div class="map-frame">
                 <iframe
-                    src="https://www.google.com/maps?q={{ $mapQuery }}&output=embed"
+                    src="{{ $mapEmbedSrc }}"
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     allowfullscreen

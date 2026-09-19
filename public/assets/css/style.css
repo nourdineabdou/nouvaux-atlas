@@ -26,7 +26,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
 body{
     font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
     background:#fff;
@@ -73,7 +73,7 @@ a{text-decoration:none}
     backdrop-filter:blur(14px);
     -webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid transparent;
-    transition:all .3s var(--ease);
+    transition:background-color .3s var(--ease),box-shadow .3s var(--ease),padding .3s var(--ease),border-color .3s var(--ease);
 }
 .navbar.scrolled{
     background:rgba(255,255,255,.96);
@@ -191,6 +191,11 @@ section{padding:3.25rem 0}
     box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:var(--bg-tint);
 }
 .hero-visual-frame img{width:100%;height:100%;object-fit:cover;display:block}
+/* fallback for browsers without aspect-ratio support (older Safari/iOS) */
+@supports not (aspect-ratio:1/1){
+    .hero-visual-frame{height:0;padding-top:75%}
+    .hero-visual-frame img{position:absolute;top:0;left:0;right:0;bottom:0}
+}
 
 .hero-floating-badge{
     position:absolute;left:1.25rem;bottom:0;z-index:2;
@@ -337,9 +342,10 @@ section{padding:3.25rem 0}
 .contact-form-panel{background:#fff;padding:2rem 1.75rem}
 .form-control,.form-select{
     border-radius:var(--radius-sm);border:1.5px solid var(--border-soft);
-    padding:.75rem 1rem;font-size:.95rem;transition:border-color .2s ease,box-shadow .2s ease;background:#fbfcfe;
+    padding:.75rem 1rem;font-size:16px;transition:border-color .2s ease,box-shadow .2s ease;background:#fbfcfe;
 }
 .form-control:focus,.form-select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(13,110,253,.12);background:#fff}
+@media (min-width:768px){ .form-control,.form-select{font-size:.95rem} }
 .form-label{font-weight:600;font-size:.85rem;color:var(--ink-soft);margin-bottom:.4rem}
 
 @media (min-width:768px){ .contact-info-panel,.contact-form-panel{padding:2.75rem} }
